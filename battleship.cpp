@@ -609,19 +609,19 @@ void handleScoreScreen(RenderWindow& window, Font& font, int& currentState, Soun
 int main() {
     RenderWindow window(VideoMode(windoww, windowh), "Battleship Menu");
     Font font;
-    if (!font.loadFromFile("Beauty Sunny.otf")) {
+    if (!font.loadFromFile("arial.ttf")) {
         cout << "Error loading font!" << endl;
         return -1;
     }
     //click sound
     SoundBuffer clickBuffer;
-    if (!clickBuffer.loadFromFile("select.mp3.mp3")) {
+    if (!clickBuffer.loadFromFile("click.mp3")) {
         cout << "Error loading click sound!" << endl;
         return -1;
     }
 
     SoundBuffer selectBuffer;
-    if (!selectBuffer.loadFromFile("select.mp3.mp3")) {
+    if (!selectBuffer.loadFromFile("select.mp3")) {
         cout << "Error loading click sound!" << endl;
         return -1;
     }
