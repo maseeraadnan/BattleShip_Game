@@ -25,7 +25,7 @@ RectangleShape createButton(float x, float y, const Color& color) {
 void handleMainMenu(RenderWindow& window, Font& font, int& currentState, Sound& click) {
     // Load background texture for main menu
     Texture texture;
-    if (!texture.loadFromFile("assets/battle4.jpg")) {
+    if (!texture.loadFromFile("battleship4.jpg")) {
         cout << "Error loading background texture!" << endl;
         return;
     }
@@ -272,7 +272,7 @@ bool allShipsSunk(Board& board) {
 }
 
 void playBackgroundMusic(Music& music) {
-    if (!music.openFromFile("audios/music.mp3")) {
+    if (!music.openFromFile("music.mp3")) {
         cout << "Error loading background music!" << endl;
         return;
     }
@@ -283,8 +283,8 @@ int playerScore = 100;
 string winner;
 void handleGameScreen(RenderWindow& window, Font& font, int& currentState, Sound& select) {
     Texture playerBackground, computerBackground;
-    playerBackground.loadFromFile("assets/back.jpg");
-    computerBackground.loadFromFile("assets/back.jpg");
+    playerBackground.loadFromFile("back.jpg");
+    computerBackground.loadFromFile("back.jpg");
 
     Sprite playerBackgroundSprite(playerBackground);
     Sprite computerBackgroundSprite(computerBackground);
@@ -329,7 +329,7 @@ void handleGameScreen(RenderWindow& window, Font& font, int& currentState, Sound
             renderBoard(window, computerBoard, 140 + GRID_SIZE * CELL_SIZE + 20, 100, true); // render computer board
 
             Font font;
-            font.loadFromFile("fonts/arial.ttf");
+            font.loadFromFile("arial.ttf");
             Text instruction("Click to place your ships.", font, 20);
             instruction.setFillColor(Color::White);
             instruction.setPosition(55, 65);
@@ -470,7 +470,7 @@ void handleGameScreen(RenderWindow& window, Font& font, int& currentState, Sound
         renderBoard(window, computerBoard, 140 + GRID_SIZE * CELL_SIZE + 20, 100, true);
 
         Font font;
-        font.loadFromFile("fonts/GILLUBCD.ttf");
+        font.loadFromFile("GILLUBCD.ttf");
         Text scoreText("Score: " + to_string(playerScore), font, 30);
         scoreText.setFillColor(Color::White);
         scoreText.setPosition(420, 550);
@@ -499,7 +499,7 @@ void handleGameScreen(RenderWindow& window, Font& font, int& currentState, Sound
 void handleScoreScreen(RenderWindow& window, Font& font, int& currentState, Sound& click) {
 
     Texture texture;
-    if (!texture.loadFromFile("assets/winner2.jpg")) {
+    if (!texture.loadFromFile("winner2.jpg")) {
         cout << "Error loading background texture!" << endl;
         return;
     }
@@ -609,19 +609,19 @@ void handleScoreScreen(RenderWindow& window, Font& font, int& currentState, Soun
 int main() {
     RenderWindow window(VideoMode(windoww, windowh), "Battleship Menu");
     Font font;
-    if (!font.loadFromFile("fonts/arial.ttf")) {
+    if (!font.loadFromFile("Beauty Sunny.otf")) {
         cout << "Error loading font!" << endl;
         return -1;
     }
     //click sound
     SoundBuffer clickBuffer;
-    if (!clickBuffer.loadFromFile("audios/click2.mp3")) {
+    if (!clickBuffer.loadFromFile("select.mp3.mp3")) {
         cout << "Error loading click sound!" << endl;
         return -1;
     }
 
     SoundBuffer selectBuffer;
-    if (!selectBuffer.loadFromFile("audios/select.wav")) {
+    if (!selectBuffer.loadFromFile("select.mp3.mp3")) {
         cout << "Error loading click sound!" << endl;
         return -1;
     }
